@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSSBaiTap3.css">
+</head>
+<body>
+<div class="head">
+    <div class="inf">
+        <div class="book">
+            <img src="data:image/jpeg;base64,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">
+        </div>
+        <div class="inf-desc">
+            <p>Tác giả: <a href="https://truyenfull.vn/tac-gia/thien-ha-ba-xuong/" title="Thiên Hạ Bá Xướng">Thiên
+                Hạ Bá Xướng</a></p>
+            <p>Thể Loai: <a href="https://truyenfull.vn/the-loai/linh-di/" title="Linh Dị">Linh Dị</a> ,
+                <a href="https://truyenfull.vn/the-loai/tham-hiem/" title="Thám Hiểm">Thám Hiểm</a> ,
+                <a href="https://truyenfull.vn/the-loai/trinh-tham/" title="Trinh Thám">Trinh Thám</a>
+            </p>
+        </div>
+    </div>
+    <div class="description">
+        <h2 class="title">Ma thổi đèn</h2>
+        <div>
+            <p>
+            <p>
+                <em>Bùa mô kim, ấn quật mộ, dỡ núi dời non tìm quyết chú</em>
+            </p>
+            <p>
+                <em>Người thắp nến, quỷ thổi đèn, dò mồ đổ đấu kiếm vạn tiền…</em>
+            </p>
+            <p>
+                Từ ngàn năm trước, ở đất nước Trung Hoa đã có nghề trộm mộ, còn gọi là Mô Kim hiệu úy. Dám hành nghề
+                đào mộ quật mả, can trường là chuyện nhỏ, còn phải là tay sâu dày về huyền học, phong thủy… cũng như
+                các loại cạm bẫy.
+            </p>
+            <p>
+                Hồ Bát Nhất, quân nhân giải ngũ có cuốn bửu bối của ông nội; Tuyền béo, con nhà lính, súng bắn như
+                chớp; Shirley Dương, nữ triệu phú Hoa kiều, cũng là cháu ngoại một tay trộm mộ lẫy lừng&nbsp; –
+                chính là ba Mô kim hiệu uý đương thời. Ba người, ba động cơ, đã cùng dấn bước vào sa mạc hung hiểm
+                hòng truy tìm toà thành cổ Tinh Tuyệt thần bí… Bản lĩnh có thừa, chỉ tiếc là, họ không biết được
+                những lời nguyền đáng sợ nào đang đợi họ…
+            </p>
+            <p>
+                Ma thổi đèn, cuốn kỳ thư về nghề trộm mộ, thật sự là một hiện tượng
+                xuất bản ở Trung Quốc, được coi là Da Vinci Code và Tomb Raider ở nước này, và đã mở ra cả một trào
+                lưu ganh đua xuất bản tiểu thuyết và sách về mồ mả huyền thuật ở đại lục suốt mấy năm gần đây.
+            </p>
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="book-chap">
+    <ul>
+        <li><a href="#chuong1" id="book-chuong1">Chương 1: Ả người giấy và anh bạn chuột</a></li>
+        <li><a href="#chuong2" id="book-chuong2">Chương 2: “Thập lục tự âm dương phong thuỷ bí thuật”</a></li>
+        <li><a href="#chuong3" id="book-chuong3">Chương 3: Ngôi mộ trong núi</a></li>
+        <li><a href="#chuong3" id="book-chuong4">Chương 4: Dòng Côn Luân không băng</a></li>
+    </ul>
+</div>
+<div class="border">
+    <div class="read">
+        <div id="chuong1">
+        <h3> Vào truyện Truyện "Ma Thổi Đèn "</h3>
+        <p>
+            Trộm mộ chẳng phải việc tham quan ngắm cảnh, chẳng phải ngâm thơ đối câu, chẳng phải thuê hoa dệt vóc, không
+            thể
+            nhã nhặn khiêm nhường, không thể ung dung nhàn tản, chẳng thể tuần tự theo tôn ti “thiên địa quân thân sư”
+            cho
+            được. Trộm mộ là một thứ kỹ thuật, một thứ kỹ thuật phá hoại. Tự thuở xưa, khi các quý tộc xây dựng lăng mộ,
+            ắt
+            đã tìm đủ mọi cách để phòng ngừa trộm cắp, vậy nên hẳn là có bao nhiêu thủ đoạn cũng đã dùng hết cả rồi,
+            trong
+            mộ thường sắp đặt đủ loại cạm bẫy ám khí, nào đá tảng, cá trôi, nào tên độc, rắn rết, hố chông…nhiều không
+            kể
+            xiết. Đến đời nhà Minh, chịu ảnh hưởng của kỹ thuật phương Tây, một số ngôi mộ lớn thậm chí đã sử dụng cả hệ
+            thống bánh răng ròng rọc của phương Tây, đặc biệt là lăng của các hoàng đế nhà Thanh, có thể coi là những
+            kiệt
+            tác gom thâu kỹ thuật phòng trộm của mấy ngàn năm cũng xứng. Đại quân phiệt Tôn Diệt Anh muốn khai quật Đông
+            lăng để lấy vàng bạc sung vào quân phí, đã huy động cả một đội quân, vừa đào bới vừa nổ mìn cũng phải mất
+            năm
+            sáu ngày trời mới xong, độ kiên cố của mấy lăng ấy thế nào chắc không cần nói cũng có thể mường tượng ra
+            được.
+            Bài toán dành cho những kẻ trộm mộ thời bấy giờ là phải nghĩ ra trăm phương nghìn kế phá giải những cạm bẫy
+            đó,
+            để vào mộ tìm kiếm báu vật. Thế nhưng hiện nay, việc tìm ra mộ cổ còn khó hơn việc khai quật mộ nhiều lần,
+            những
+            ngôi mộ lớn xây theo kiểu đắp nấm dựng bia rõ ràng thì đã bị người ta đào bới gần hêt từ lâu rồi. Còn nếu
+            muốn
+            tìm mộ cổ đã vùi sâu trong lòng đất nhiều năm, lại không có dấu mốc gì trên mặt đất, thì phải cần đến một số
+            kỹ
+            thuật nhất định như vài thứ công cụ đặc biệt, các loại như khoan sắt, đinh tre, xẻng Lạc Dương, thám âm
+            trảo,
+            hắc chiết tử, toàn địa long nhất loạt đều từ đây mà ra. Ngoài ra,cũng có một số cao thủ lại không dựa vào
+            mấy
+            thứ ấy, có người tìm mộ bằng cách lần tìm đầu mối được ghi chép trong thư tịch cổ xưa, cũng có một số rất ít
+            người hiểu được bí thuật, có thể tìm ra mộ huyệt bằng khả năng xem phong thuỷ, đọc mạch tượng của đồi núi
+            sông
+            ngòi, bản thân tôi chính là thuộc loại cuối cùng này. Tôi đã đặt chân qua khắp mọi nẻo đừơng, trải qua vô số
+            chuyện ly kỳ quái dị, nếu đem kể từng chuyện ra, chắc hẳn sẽ khiến kẻ thấy kinh hồn, người nghe bạt vía, nói
+            cho
+            cùng thì những sự tích lấp biển lật sông, xẻ đất che trời, hình rồng tướng hổ như vậy kể cũng đâu phải tầm
+            thường.
+        </p>
+        <p>
+            Những sự tích ấy phải bắt đầu kể từ cuốn sách cũ Thập lục tự Âm dương Phong thủy bí thuật ông nội tôi để
+            lại,
+            cuốn tàn thư này, chẳng biết cớ gì mà nửa cuối lại bị người ta xé toẹt đi rồi, chỉ còn lại phần đầu viết về
+            bí
+            thuật phong thuỷ. Những điều trong sách, quá nửa là các bí thuật độc môn để học hiểu bố cục phong thủy của
+            mộ
+            táng…
+        </p>
+        <h3>Chương 1: Ả người giấy và anh bạn chuột</h3>
+        <p>
+            Nội tôi tên là Hồ Quốc Hoa. Tổ tiên nhà họ Hồ là đại địa chủ có tiếng trong vùng, vào thời huy hoàng nhất đã
+            từng mua hơn bốn mươi gian nhà liền kề nhau ở ba con ngõ trong thành, trong họ cũng có người làm quan, có
+            người
+            đi buôn bán, cũng từng quyên tiền hỗ trợ công việc tào vận và cung cấp thóc lúa cho triều đình Mãn Thanh.
+            Tục ngữ có câu: “ Không ai giàu ba họ, không ai khó ba đời” kể cũng đúng thật, trong nhà dù có núi vàng núi
+            bạc,
+            thì cũng không trụ được khi có những đứa phá gia chi tử chỉ biết ăn tàn phá hại.
+        </p>
+        Đến những năm Dân Quốc, Hồ gia truyền tới đời ông nội tôi thì gia đạo suy vi, thoạt tiên là chia nhà, gia sản
+        chia cho ông cũng không ít, đủ để ăn no mặc ấm suốt đời, thế nhưng ông lại không chịu học điều hay lẽ tốt, đương
+        nhiên điều này có ảnh hưởng của hoàn cảnh xã hội lúc bấy giờ nữa, trước thì say mê cờ bạc, sau lại nghiện Phúc
+        thọ cao (1), cuối cùng cả gia tài bị ông đem tiêu sạch bách.
+        <p>
+            Thời trai trẻ hút hít ăn chơi, không tệ nào ông không phạm, cuối cùng thì quẫn đến nỗi một cắc chẳng còn.
+            Người
+            ta một khi lên cơn nghiện thì vò ruột bứt gan, sao mà nhịn nổi, nhưng không có tiền thì ai cho ông hút?
+            Trước
+            kia lúc có tiền có của, từ thằng chủ cho đến con hầu trong ổ hút ấy hễ thấy ông là xoen xoét gọi “Hồ đại
+            gia”,
+            tiếp đãi ân cần chu đáo lắm, nhưng đến khi không xu dính túi, thì chúng coi ông là thằng ăn mày, chúng vừa
+            chửi
+            mắng vừa đánh đuổi,hắt ông như hắt hủi vậy.
+            Người ta nhược bằng túng quẫn quá, thì mấy mớ quan niệm về đạo đức liêm sỉ cũng có sá gì, nội tôi nghĩ được
+            một
+            cách, đi lừa tiền ông cậu. Cậu của ông tôi biết ông là thằng nghiện ngập phá gia chi tử, thường ngày thì một
+            hào
+            một cắc chẳng cho, nhưng lần này ông phỉnh cậu, bảo rằng sắp lấy vợ, xin cậu gom cho ít tiền.
+        </p>
+        Ông cậu nghe nói vậy, xúc động đến nỗi nhạt nhoà nước mắt, thằng cháu bất hiếu này giớ mới coi như cũng làm được
+        một việc tử tế, nếu kiếm được một cô cháu dâu hiền đức trông coi cẩn thận, dạy dỗ cho nó, có khi về sau lại khá
+        lên cũng không chừng.
+        <p>
+            Vậy là ông cậu đưa nội tôi hai mươi đồng Đại Dương, dặn rằng lấy vợ thì sau phải sống cho đàng hoàng, chớ
+            dính
+            vào Phúc thọ cao nữa, để mấy hôm nữa rảnh, ông sẽ đích thân tới nhà xem mặt cháu dâu.
+        </p>
+        Ông nội Hồ Quốc Hoa của tôi có rất nhiều trò ma mãnh, để đối phó với cậu, sau khi về nhà, ông liền vào thôn tìm
+        một tay thợ chuyên làm mấy thứ người giấy, ngựa giấy(chính là loại để đốt cho người chết). Lão thợ này tay nghề
+        rất cao, chỉ cần là thứ có thể tả ra được là lão có thể làm ra giống hệt như thế.
+        <p>
+            Theo yêu cầu của ông nội, lão hàng mã làm ra một cô gái bằng giấy phết hồ, sau đó dùng màu nước vẽ lên lông
+            mày,
+            mắt, mũi, áo quần, đầu tóc, nhìn từ xa, thì ôi thôi, trông giống y như người thật vậy.
+        </p>
+        Ông nội tôi cõng người giấy về nhà, đặt vào giường trong, lại lấy chăn đắp lên, trong bụng tự lấy làm yên tâm
+        lắm, đợi mấy hôm nữa ông cậu đến, thì cứ viện cớ vợ ốm, nằm liệt giường không thể tiếp khác, để ông cậu đứng
+        nhìn từ xa là được. Ngẫm thấy đắc ý, ông bất giác hát rống lên vài câu, rồi chuồn luôn vào thành hút thuốc.
+        <p>
+            Mấy hôm sau, ông cậu quả nhiên đến thật, lại còn mua vải vóc bánh trái thăm cô cháu dâu, nội tôi mang những
+            lời
+            nhẽ đã toan tính ra từ trước lần nữa thoái thác, than rằng vợ không khoẻ, không tiếp khách được, rồi vén rèm
+            để
+            cậu đứng ngoài nhìn, sau đó lại lập tức buông xuống ngay.
+        </p>
+        Ông cậu không vừa lòng, mới nhủ, cái thằng ranh con này lại đối phó với cậu mày như thế à? Không được! Hôm nay
+        dứt khoát phải gặp được cháu dâu mới thôi, có bệnh thì cho tiền mời thầy lang đến chữa!
+        <p>
+            Ông nội sống chết níu ông cậu lai không cho vào, nhưng cành níu kéo thì ông cậu càng sinh nghi, đôi bên cứ
+            thế
+            co kéo, cuối cùng không ngăn được, ông cậu chạy xộc vào nhà trong, vừa nhìn lên giường, suýt nữa chết khiếp,
+            một
+            bộ mặt đàn bà trắng bệch, còn phết đỏ tròn hai má, rõ ràng là một ả người giấy.
+
+        Mùa xuân năm ấy đã xảy ra rất nhiều chuyện, vụ ông Hồ Quốc Hoa mua người giấy gạt tiền bại lộ, ông cậu giận quá
+        hoá bệnh, không ngồi dậy nổi, chưa đến ba hôm thì rũ áo chầu trời.
+        <br>
+        Họ hàng bạn bè của Hồ gia, ai cũng phòng nội tôi như phòng trộm, chớ nói cho vay tiền, ngay đến cơm thừa cũng
+        không cho ông lấy một miếng. Ông đành bán nốt đôi tủ gỗ đàn lấy hai đồng bạc, chiếc tủ này là của hồi môn của cụ
+        bà, ông vốn định giữ lại để tưởng niệm, chưa nỡ đem đi cầm,nhưng khi cơn nghiện phát tác, thì cũng không còn
+        nghĩ ngợi được nhiều thế nữa rồi. Cầm hai đồng bạc ấy đi mua một dúm Phúc thọ cao, chạy về nhà liền vội vã sà
+        vào giường châm thuốc hít mạnh hai hơi, cơ thể bỗng dưng nhẹ bẫng, tựa hồ như đang chấp chới lên mây.
+        <br>
+        Lúc ấy, ông cảm thấy sướng như lên tiên, dăm ba cái chuyện bị người ta khinh rẻ, ức hiếp, rồi bị mắng bị chửi
+        thường ngày, giờ đều vặt vãnh cả. Hít thêm hai hơi tiếp, ông bỗng phát hiện nằm trên cái giường nát bươm của
+        mình còn có một đống đen đúa xù xì, nhìn lại cho kỹ, hoá ra góc giường có một con chuột cống to tướng đang chồm
+        hỗm. Con chuột này ý chừng phải sống lâu rồi, ria nó đã trắng cả, mình nó phải xấp xỉ con mèo. Nó đang nằm hít
+        thứ khói bốc ra từ tẩu thuốc của Hồ Quốc Hoa, dường như cũng biết đến lợi ích của thuốc phiện, lỗ mũi cứ khịt
+        khịt tham lam tận hưởng.
+        <br>
+        Nội tôi bỗng thấy hứng thú lắm, quay ra bảo con chuột: “Mày cũng nghiện thuốc hả? Xem ra tao với mày là người
+        đồng đạo rồi.” Nói đoạn ông lại hút một hơi, rồi phả thứ khói nồng nặc ấy vào con chuột, con chuột dường như
+        biết ông tôi không có ác ý, cũng chẳng sợ ông, bèn nghển cổ đón lấy làn khói đặc đương phả vào mình. Quá trưa,
+        dường như đã thoả mãn được cơn nghiện, con chuột lững thững bò đi.
+        <br>
+        Mấy ngày liền đều như vậy, hôm nào con chuột cũng bò đến hít thuốc với ông nội, ông tôi đi đâu cũng bị người ta
+        khinh miệt, chung quanh chẳng có lấy một tấm bạn tâm tình, thấy con chuột quấn mình như vậy đâm ra thích chí, có
+        lần con chuột đến hơi muộn, ông cũng gắng nhịn cơn nghiện mà chờ nó.
+        <br>
+        Thế nhưng niềm vui ngắn chẳng tày gang, nhà ông nội bây giờ chỉ còn lại chiếc giường trơ và bốn bức tường, chẳng
+        còn đồng nào mà mua thuốc nữa, ông ủ rũ vì hết cách, than thở với con chuột: “Chuột ơi chuột à, hôm nay là ngày
+        cùng tháng kiệt rồi, chẳng còn tiền mua Phúc thọ cao nữa đâu, e rằng chẳng được cùng mày ngửi lại cái mùi nồng
+        nàn ấy nữa rồi.” Nói dứt ông cứ sụt sịt không thôi.
+        <br>
+        Con chuột nghe những lời ông nói, hai mắt long lanh chớp chớp như nghĩ ngợi gì, rồi bỗng quay ngoắt bỏ đi. Đến
+        khi trời tối, nó ngậm một đồng tiền bạc quay về nhà bên cạnh gối ông tôi, ông nội vừa mừng rỡ lại vừa kinh ngạc,
+        liền chạy cả đêm vào thành mua lấy một miếng Phúc thọ cao, về nhà là đốt ngay bàn đèn, cùng con chuột hút một
+        trận đã đầy no sướng.
+        <br>
+        Ngày hôm sau con chuột lại ngậm ba đồng bạc tha về, ông nội mừng rơn khôn tả, nhớ lại một điểm cố được học từ
+        thời con trong trường tư thục trước đây, bèn nói với nó: “Kẻ biết Quản Trọng, chính Bào Thúc Nha đó vậy, nay
+        người biết ta bần hàn mà hậu đãi ta, thật là tri kỷ của ta vậy, nếu chẳng chê bai, chúng ta hãy kết nghĩa kim
+        lan đi!”. Từ đó ông với chuột xưng huynh gọi đệ, gọi là “anh chuột”, ăn uống cùng chia, thuốc hút chung hưởng,
+        lại còn làm cho con chuột cái ổ bằng bông, để nó cùng ngủ trên giường.
+        <br>
+        Người chuột nương nhau, như đôi bạn tâm đầu ý hợp, con chuột hàng ngày đều đi tha bạc về, ít thì một hai đồng,
+        nhiều thì bốn năm đồng, từ đó ông nội chẳng còn gánh lo cơm áo nữa. Bao năm về sau, mỗi khi nội tôi nhớ lại, vẫn
+        nói rằng chuỗi ngày ấy là quãng thời gian vui sướng nhất của đời ông.
+        <br>
+        Bẵng nửa năm trôi qua, ông tôi ngày một giàu có, nhưng trớ trêu thay chẳng phải có câu “Giàu sang gặp thảy bạn
+        vàng, sa cơ lỡ vận gặp toàn tiểu nhân” đó sao, cũng chỉ biết trách cái số ông nội Hồ Quốc Hoa của tôi là số
+        nghèo số hạn, bị một thằng tiểu nhân nhòm ngó.
+        <br>
+        Trong thôn có thằng vô lại Vương Nhị, thằng này đâu bì được với ông tôi, ông nội chí ít cũng từng giàu có, dù gì
+        cũng từng là “Hồ đại thiếu gia” ngót nghét hai chục năm trời, còn thằng Vương Nhị kia thì có đâu cái phúc ấy, tổ
+        tiên tám đời nhà hắn kể cả hắn bây giờ đều chưa từng mặc nổi cái quần nào lành lặn. Vương Nhị thấy ông tôi gia
+        nghiệp suy bại thì “cháy nhà hàng xóm, vỗ tay reo mừng”, thỉnh thoảng lại vô duyên vô cớ bức hiếp làm nhục ông
+        nội, bắt nạt Hồ đại thiếu gia năm xưa mấy phen cho hả dạ. Truyện "Ma Thổi Đèn "
+        <br>
+        Gần đây Vương Nhị lấy làm kỳ lạ, ông tôi là một tên nghèo đói chẳng có công ăn việc làm, đồ đạc lại đều đem đi
+        cầm cố cả, ngay đến họ hàng thân thích cũng đã chết gần hết, chẳng hiểu cớ gì mà vẫn hút thuốc được như thường?
+        Tiền mua thuốc lấy đâu ra? Hắn bèn nghĩ bụng: nói không chừng thằng ấy lại đi ăn trộm. Ta phải rình nó xem sao,
+        đợi lúc nó thó đồ nhà người ta, mình bắt quả tang rồi báo cho quan phủ, kiếm mấy đồng Đại Dương tiền thưởng cũng
+        tốt. Truyện "Ma Thổi Đèn "
+        <br>
+        Thế nhưng rình một thời gian, phát hiện ông tôi ngoại trừ những khi thi thoảng vào thành mua đồ ăn và thuốc hút,
+        thì căn bản là không bước chân ra khỏi cửa, mà cũng chẳng qua lại với bất kỳ người nào. Càng tò mò muốn biết
+        tiền ở đâu ra, Vương Nhị lại càng thấy bứt rứt không yên.
+        <br>
+        Một hôm, nhân lúc ông nội tôi ra ngoài mua đồ, Vương Nhị thừa cơ trèo tường nhảy vào nhà trong, lục lọi mọi nơi
+        gầm bàn hốc tủ hòng tìm xem ông tôi rốt cuộc có bí mật gì. Đột nhiên nhìn thấy trên giường có một con chuột to
+        xù đang ngủ, hằn bèn tiện tay vất luôn vào trong siêu nước đang đun trên lò, sau đó đậy nắp lại, nghĩ bụng đợi
+        đến khi tên họ Hồ kia về nhà uống nước, ta sẽ nấp bên ngoài xem trò hay ho.
+        <br>
+        Chẳng đợi Vương Nhị chạy ra, ông nội đã về đến nhà, vừa văn dồn chặn hắn lại bên trong. Vừa nhìn thấy con chuột
+        bị luộc chín trong siêu nước, tức thời mắt ông liền đỏ sọc lên, vớ ngay con dao thái rau, chém vào thằng vô lại
+        họ Vương kia mười mấy nhát. May mà nội tôi là kẻ nghiện ngập, chân tay yếu ớt nên tuy Vương Nhị bị chém trúng
+        mấy nhát dao nhưng cũng không có vết thương nào chí mạng cả, Vương Nhị máu me bê bết khắp người, chạy thục mạng
+        tới đội bảo an cầu cứu, đội trưởng đội bảo an là họ hàng với một tay quân phiệt địa phương, bấy giờ đang mời tay
+        quân phiệt này nhắm rượu, tên đội trưởng biết tin liền nổi giận đùng đùng, giữa ban ngày ban mặt hành hung giết
+        người còn coi vương pháp ra gì nữa? Vội sai ngay mấy tên thuộc hạ đi bắt trói ông nội tôi về.
+        <br>
+        Ông nội bị giải về đốn, tên đội trưởng nạt giọng quát hỏi, cớ gì cầm dao hành hung đòi giết Vương Nhị.
+        Ông tôi nước mắt lưng tròng, khóc nấc kể lại đầu đuôi sự tình, cuối cùng nói với giọng đầy ai oán: “Nhớ khi xưa
+        tôi khốn khổ khốn nạn, không có anh chuột tôi đã chẳng sống được đến ngày hôm nay, nào ngờ chỉ sơ suất một chút
+        đã để anh mất mạng, tuy không phải do tôi giết, nhưng anh chuột lại vì tôi mà chết. Tôi mà phụ người bạn hiền
+        dưới chín suối này thì tình nghĩa ở đâu nữa? Một mình tôi làm một mình tôi chịu, tôi đã chém thằng khốn Vương
+        Nhị vậy rồi, giờ muốn phạt muốn giết xin nghe đại nhân phán xử, chỉ xin đại nhân cho tôi về an táng anh chuột,
+        rồi tôi chết cũng nhắm mắt.”
+        <br>
+        Không đợi tên đội trưởng nói gì, tay quân phiệt bên cạnh đã cảm động xuýt xoa, nói với ông tôi: “Mẹ kiếp! Không
+        vong ơn chính là nhân, không phụ lòng tức là nghĩa, đối với con chuột mà còn như vậy huống hồ là đối với con
+        người? Ta niệm tình cậu có nhân có nghĩa, giờ lại không chốn nương thân, từ rày hãy theo ta tòng quân làm phó
+        quan đi”.
+        <br>
+        Súng ống là chính quyền, trong thời loạn lạc, lời của kẻ nắm giữ binh quyền là vương pháp. Tay quân phiệt ra
+        lệnh cho bọn thủ hạ dùng roi quất Vương Nhị một trận te tua để nội tôi bõ tức, sau đó cho ông về nhà an táng con
+        chuột. Ông tôi trở về lấy hộp gỗ liệm xác bạn chuột, rồi đào một cái hố chôn đi, khóc lóc tỉ tê hồi lâu mới dứt
+        áo đi theo tay quân phiệt kia.
+        <br>
+        Tục ngữ nói thật hay: “Đói thời khoai ráy cũng ngon, no thời xô thịt bấy còn dửng dưng”. Con người ta một khi
+        nghèo khổ điêu đứng, người khác dẫu chỉ cho bát cháo, miếng cơm hẳn cũng sẽ cảm tạ ơn đức vô cùng, huống hồ con
+        chuột kia lại mang về cho ông tôi biết bao tiền của. Đương nhiên tiền ấy cũng chỉ là tiền ăn cắp, thánh nhân dạy
+        dẫu chết khát cũng chẳng uống nước trộm dòng, có điều đó là tiêu chuẩn đạo đức của những bậc thánh tiên hiền, cổ
+        nhân còn hiếm người làm được, huống hồ là hạng phàm phu tục tử như ông Hồ Quốc Hoa! Trước thường nghe hút thuốc
+        trong phòng, lâu ngày chuột ruồi nghiện cả, lời này tịnh chẳng hề sai chút nào.
+        </p>
+        </div>
+        <div id="chuong2">
+            <h3>Chương 2: “Thập lục tự âm dương phong thuỷ bí thuật”</h3>
+            <p>Từ đó trở đi ông tôi đi làm lính, lại rất được trọng dụng, khốn nỗi cái thời ấy thiên hạ đại loạn, quân phiệt hỗn chiến,chỉ cần nắm trong tay một đội quân độ trăm người là đã có thể cát cứ một vùng, nay ngươi diệt ta, mai kẻ khác lại xử ngươi, chẳng mấy thế lực có thể giữ được lâu dài. Thế lực của đội quân mà ông tôi đi theo vốn dĩ không lớn, chưa quá một năm đã bị một đạo quân khác đánh cho tơi bời khói lửa trong trận chiến tranh giành địa bàn, kẻ thì chết, người thì bỏ chạy, ngay cả tay quân phiệt trước đã cất nhắc Hồ Quốc Hoa cũng trúng đạn tử trận.</p>
+            <p>
+                Sau cuộc binh bại, ông nội tôi chạy về quê cũ, lúc bấy giờ gian nhà rách nát ngày xưa đã sập từ đời nào, lại vì chạy trốn quá vội vàng nên trên người cũng không mang theo đồng xu nào, hai ngày liên tục không được ăn, cộng với cơn nghiện hoành hành, ông chẳng còn cách nào khác, đành phải bán khẩu súng cho bọn thổ phỉ, đổi lại chút thuốc hút đồ ăn để giải quyết mối nguy trước mắt.
+            </p>
+            <p>
+                Ông tôi trầm tư tự nhủ, cứ tiếp tục thế này cũng chẳng phải cách, một dúm lương thực với thuốc phiện này cùng lắm cũng chỉ có thể gắng gỏi được dăm ba hôm, nhưng ăn trơn hít sạch rồi thì sau đó thế nào? Khi ấy ông mới chợt nhớ ra cách nhà chừng hơn trăm dặm có khu Thập Tam Lý phố, chỗ ấy có rất nhiều mộ phần của các bậc đại quan hiển quý, bên trong có vô số đồ tuỳ táng đắt tiền.
+            </p>
+            <p>
+                Ông Hồ Quốc Hoa lúc bấy giờ đã từng đi lính, từng đánh trận, so với trước kia giờ đã to gan lớn mật hơn nhiều. Trước trong quân đội, ông tôi từng được một tay binh sĩ già kể cho nghe nhiều chuyện đào trộm mộ, trộm mộ trong dân gian vẫn thường gọi là “đổ đấu”(1), có thể phát tài lớn, nhưng nếu bị bắt thì chỉ có nước bêu đầu, cho nên ông không dám hành động vào ban ngày, đành đánh liều cầm đèn, vác cuốc đi tới khu mồ hoang Thập Tam Lý trong một đêm trăng lông.
+
+                Trăng lông tức là trăng gì? Tức chỉ trời không mây, nhưng ánh trăng không sáng mà mông lung mờ ảo. Đương nhiên người thời nay chúng ta đều biết, đây là một hiện tượng tự nhiên, trăng như vậy thường được gọi là trăng quầng, là điềm báo sắp có gió to, nhưng người nhà quê thời ấy,nào ai biết gì về khoa học. Ở một số vùng quê dân cứ gọi đó là trăng mọc lông, có người nói đêm trăng u ám như vầy, cũng chính là lúc cô hồn dạ quỷ thích ra ngoài lảng vảng nhất.
+
+                Vừa tới nơi, ông liền uống ngay nửa cân rượu cho nóng người, lấy thêm can đảm. Đêm hôm ấy, trăng lạnh sao thưa, gió âm se sắt, giữa nấm mồ hoang chập chờn những đốm mà trơi, phút chốc lại có tiếng chim lạ kêu lên ken két, ngọn đèn trong tay lúc mờ lúc tỏ, tựa hồ có thể phụt tắt bất cứ lúc nào.
+            </p>
+        </div>
+        <div id="chuong3">
+            <h3>Chương 3: Ngôi mộ trong núi</h3>
+            <p>Ông nội tôi bấy giờ tuy vừa uống rượu, nhưng vẫn đổ mồ hôi lạnh bởi cái chốn ma ám rợn mình, bận này toi công, nửa cân rượu trắng uống vào coi như không, bao nhiêu rượu đều theo lỗ chân lông chảy ra ngoài hết cả.
+
+                Cũng may đây là khu mộ hoang, xung quanh không một bóng người, có gào hét ầm ĩ cũng chẳng sợ ai nghe thấy, ông tôi bèn hát vài khúc sơn ca để tăng thêm dũng khí, nhưng ông cũng chẳng biết mấy bài, được dăm ba câu thì đã hết cả vốn, sau đành hát bừa mấy điệu quen thuộc hàng ngày như “sờ mười tám cái” , “mong nhớ năm canh”.
+
+                Ông tôi đánh liều, run rẩy bước tới giữa khu nghĩa địa. Nơi đó có một nấm mộ lẻ loi không bia, giữa bãi mộ hoang đất vằng này, nấm mộ này có vẻ khác hẳn những ngôi mộ khác.
+            </p>
+            <p>Ngôi mộ không bia, quái dị ở chỗ cỗ quan tài không hề được chôn xuống đất, mà lại cắm thẳng đứng giữa mộ phần, để lộ ra ngoài quá nửa. Cỗ quan tài trông còn rất mới, mười tám nước sơn đỏ bóng loáng dưới ánh trăng lờ nhờ chốc chốc lại ánh ra những tia sáng kỳ dị.
+
+                Ông tôi lẩm bẩm tự nhủ, cái quan tài sao lại đặt thế này cơ chứ? Mẹ tiên sư rõ quái đản, chỉ sợ không phải tầm thường. Có điều đến cũng đã đến rồi, không mở ra xem thì chuyến này đi công toi à? Hết tiền chết đói cũng là chết, không thuốc hút lên cơn cũng chết, chả bằng để ma nó bóp chết luôn đi cho sướng, ông đây cả đời toàn bị chúng nó hiếp đáp rồi, tổ bà nó, hôm nay ông quyết liều một phen, đã làm làm đến cùng.
+
+                Nghĩ xong, ông nội liền vung xẻng đào tung mớ đất chôn ngập nửa dưới cỗ quan tài lên, cả cỗ quan tài liền lộ ra trước mắt. Vốn là tay nghiên ngập, thể lực lại yếu, đào có tí đất mà đã mệt lử cả người. Ông không vội mở quan tài, ngồi bịch xuống đất moi ra ít thuốc mang theo, đưa lên mũi hít một hơi.
+
+                Đại não bị thuốc phiện kích thích, thần kinh cũng phấn khích hơn, ông nội tôi nghiến răng đứng phắt dậy, đưa xẻng nạy bung nắp quan tài ra, thi hài bên trong không ngờ lại là một mỹ nữ, mặt mũi sáng sủa như người sống, có điều phấn trát trên mặt quá dày, hai bên má lại đỏ hằn hai khoảnh son tròn, trên nền phấn trắng càng nổi bật lên như hai lá cao đỏ ói. Trên mình thi thể khoác mũ phượng dải mây, áo bào lụa đỏ, ăn vận như một cô dâu.
+
+                Xác chết này vừa được chôn xuống, hay là đã chôn được một thời gian rồi? Khu mộ này từ lâu đã bị bỏ hoang, mấy năm gần đây làm gì có ai lai vãng? Lẽ nảo ả ta đã hoá thành cương thi?
+
+                Nhưng lúc ấy, ông tôi đã chẳng còn nghĩ ngợi được gì nhiều, trong mắt chỉ còn rặt những đồ trang sức treo đầy trên mình xác chết, trong ánh đèn lay lắt đống châu báu lại loé lên những tia sáng lấp lánh đến mê người, ngoài ra đồ tuỳ táng còn có những đồng bạc được dùng giấy đỏ gói vào thành từng cọc, và vô số những lá vàng, thật nhiều không đếm xuể.
+
+                Lần này giàu to rồi, ông nội tôi hí hửng thò tay gỡ chiếc nhẫn lục bảo thạch trên tay cỗ tử thi thì đột nhiên cổ tay bị một người giữ lại, ông giật bắn mình, định thần nhìn lại, thì thấy người đang nắm tay mình hoá ra là một vị trưởng bối phong độ phi phàm.
+
+                Thì ra lúc nội tôi tất tưởi chạy tới Thập Tam Lý phố, giữa đường đã gặp một ông thầy phong thuỷ họ Tôn, Tôn tiên sinh là pháp sư có tiếng cả tỉnh, không những có thể coi số mệnh, xem phong thuỷ, mà còn biết bấm tay tiên đoán, thông hiểu Ngũ hành độn giáp nữa.
+
+                Tôn tiên sinh thoạt thấy Hồ Quốc Hoa, đã phát hiện ngay trên mặt ông tôi thấp thoáng có đám khí đen bao phủ, bấm đốt ngón tay, rồi đùng đùng nổi giận, thằng ranh con này định đi đào mà quật mộ làm trò tổn hại âm đức, nay gặp phải ta, ta quyết không thể để kệ thế được, nghĩ đoạn tiên sinh bèn đi theo để ngăn cản. Truyện "Ma Thổi Đèn "
+
+                Lúc bấy giờ Tôn tiên sinh bất ngờ chộp lấy cánh tay Hồ Quốc Hoa, rồi quát lớn: “Thằng trộm kia! Mày làm như vậy không sợ bị trời đánh thánh vật sao?”.
+
+                Lời ấy vừa cất lên, ông nội tôi ngỡ như bị vả vào mặt, vội quỳ sụp xuống, cầu xin Tôn tiên sinh tha mạng.
+
+                Tôn tiên sinh đỡ nội tôi lên, rồi nói: “Tuy ngươi đạo đức băng hoại, nhưng chưa gây tội lớn, ngươi phải biết rằng quay đầu là bến, muốn ta giúp ngươi không khó, có điều ngươi phải bái ta làm thầy, rồi cai hẳn thuốc đi!”.
+
+                Ông nội tôi nghe bảo phải cai thuốc, thoạt nghĩ thế chẳng bằng lấy quách cái mạng mình đi cho xong, nhưng đắn đo một hồi thì thấy phải chịu báo ứng thì còn khổ hơn nhiều, lại nhủ, thôi thì còn nước còn tát, cứ cầu xin lão tạm tha cho đã, sau này đợi lúc lão lơi là, ta lại tiếp tục đi hút hít có sao, lão phát hiện thế nào được? Tính toán xong, ông nội liền dập đầu, vái Tôn tiên sinh tám lạy để hành lễ bái sư.
+
+                Tôn tiên sinh thấy ông nội tôi biết lỗi sửa lỗi, lấy làm hài lòng gật đầu, sau đó nhìn ra cỗ quan tài vừa bị nội tôi mở ra, thấy xác chết bên trong còn y như đang sống, cũng không khỏi giật thót mình, nhủ thầm, xem ra nơi đây là đất dưỡng thi, cái xác của cô gái này để lâu ắt sẽ ương thành đại hoạ, cần phải diệt trừ sớm mới phải. Thế rồi tiên sinh dặn dò ông tôi phải làm thế này, thế này…
+
+                Hai người hợp sức khuân nắp quan tài lên, gắng đẩy cho nắp ván đóng lại, lấy đinh dài đóng thật chắc, lại còn dùng dấu mực vẩy lên khắp quan tài những dây mực đan xen ngang dọc, tựa những ô cờ trong bàn cờ vây, từng dây mực chen nhau tạo thành một tấm lưới đen ngòm, phủ kín lên cỗ quan tài quái dị.
+
+                Tiếp sau đó ông nội tôi chất củi khô, đốt luôn cỗ quan tài sơn son thiếp bạc ấy, ngọn lửa bùng lên rừng rực, từng luồng khói đen không ngừng bốc lên ngút trời, thối không ngửi nổi, cuối cùng chỉ còn lại một đống tro tàn.
+
+                Ông tôi lúc ấy mới nhớ ra trong quan tài còn bao nhiêu vàng bạc châu báu, liền giậm chân thở dài, tiếc nuối vô cùng, nhưng đã quá muộn rồi, đành dìu Tôn tiên sinh, theo về ở cùng sư phụ.
+
+                Về sau, Tôn tiên sinh dùng phương pháp bí truyền trị cho ông tôi khỏi nghiện, lại còn truyền cho phép bói chữ với xem phong thuỷ. Nội tôi liền bày một sạp nhỏ trong huyện thành, giúp người ta xem tướng, bói chữ, kiếm ít tiền vặt, rồi lấy một cô gái dưới quê làm vợ. Ông đội ơn cứu mạng của sư phụ, từ đó về sau an phận thủ thường, cuộc sống ngày một tốt hơn.
+
+                Song một lần Tôn tiên sinh bị cảm phong hàn, từ khi đổ bệnh đã mời không biết bao thầy lang, uống rất nhiều thuốc mà bệnh tình mãi không thuyên giảm, được vài năm thì tiên sinh cưỡi gió về trời.
+            </p>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    document.getElementById("book-chuong1").onclick = function () {
+        document.getElementById("chuong1").style.display = "block";
+        document.getElementById("chuong2").style.display = "none";
+        document.getElementById("chuong3").style.display = "none";
+        document.getElementById("chuong4").style.display = "none";
+    };
+    document.getElementById("book-chuong2").onclick = function () {
+        document.getElementById("chuong2").style.display = "block";
+        document.getElementById("chuong1").style.display = "none";
+        document.getElementById("chuong3").style.display = "none";
+        document.getElementById("chuong4").style.display = "none";
+    };
+    document.getElementById("book-chuong3").onclick = function () {
+        document.getElementById("chuong3").style.display = "block";
+        document.getElementById("chuong1").style.display = "none";
+        document.getElementById("chuong2").style.display = "none";
+        document.getElementById("chuong4").style.display = "none";
+    };
+    document.getElementById("book-chuong4").onclick = function () {
+        document.getElementById("chuong4").style.display = "block";
+        document.getElementById("chuong1").style.display = "none";
+        document.getElementById("chuong2").style.display = "none";
+        document.getElementById("chuong3").style.display = "none";
+    };
+</script>
+</html>

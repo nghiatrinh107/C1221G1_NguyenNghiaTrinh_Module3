@@ -1,0 +1,14 @@
+body {
+    background-color: lightpink ;
+}
+a {
+    text-decoration: none;
+}
+div{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h1{
+    font-family: Arial;
+    color: green;
+}
