@@ -61,3 +61,6 @@ body{
     margin-right: 5%;
 }
 #chuong1,#chuong2,#chuong3,#chuong4 {display: none;}
+html {
+    scroll-behavior: smooth;
+}
