@@ -46,6 +46,7 @@ body{
 }
 #search{
     line-height: 59px;
+    display: none;
 }
 #search>input{
     background-image: url('https://www.w3schools.com/css/searchicon.png');

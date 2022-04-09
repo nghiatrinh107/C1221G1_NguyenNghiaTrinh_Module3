@@ -416,7 +416,9 @@ hr {
 }
 
 .list-inline-item {
-    display: inline-block
+    display: flex;
+    padding-left: 30%;
+
 }
 
 .list-inline-item:not(:last-child) {
@@ -581,7 +583,8 @@ pre code {
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
-    padding-left: 15px
+    padding-left: 15px;
+
 }
 
 .col {
@@ -5812,7 +5815,8 @@ button.close {
 .carousel-inner {
     position: relative;
     width: 100%;
-    overflow: hidden
+    overflow: hidden;
+    height: auto;
 }
 
 .carousel-item {
@@ -9066,5 +9070,14 @@ a.text-dark:focus, a.text-dark:hover {
         border: 1px solid #ddd !important
     }
 }
+#search-header{
+display: none;
+}
+ #carouselExampleIndicators{
+     padding: 50px;
+ }
+ .introduce{
+     margin: 2%;
 
+ }
 /*# sourceMappingURL=bootstrap.min.css.map */
