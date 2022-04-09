@@ -70,9 +70,10 @@
 .header {
     margin: 0 5px;
     padding: 5px 0;
-    font-size: 300%;
+    font-size: 100%;
     font-family: Constantia;
     text-align: center;
+    background-color: blue;
 }
 
 .content {
@@ -83,7 +84,7 @@
     font-family: Arial;
 }
 
-content a {
+.content a {
     text-decoration: none;
     color: deepskyblue;
 }
@@ -113,8 +114,4 @@ footer {
     font-size: 120%;
     padding: 10px;
     clear: both;
-}
-img {
-    height: 20px;
-    width: auto;
 }

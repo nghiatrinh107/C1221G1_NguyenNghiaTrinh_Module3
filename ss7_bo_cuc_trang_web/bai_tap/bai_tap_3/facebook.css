@@ -1,0 +1,104 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Tahoma;
+}
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+[class*="col-"] {
+    float: left;
+    padding: 5px;
+}
+
+body{
+    margin: 0;
+}
+#header{
+    /* background-color: gray; */
+    display: flex;
+    height: 60px;
+    width: 100%;
+    border-bottom: .5px solid gray;
+    position: fixed;
+}
+#logo{
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    position: relative;
+    left: 4px;
+}
+#logo>a>img{
+    width: 56px;
+    height: 50px;
+    border-radius: 50px;
+
+}
+#search{
+    line-height: 59px;
+}
+#search>input{
+    background-image: url('https://www.w3schools.com/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    padding: 10px 20px 10px 40px;
+    height: 45px;
+    border-radius: 50px;
+    border:1px solid lightgray;
+}
+
+#header>div>a>svg{
+    position: absolute;
+    top: 13px;
+    color: black;
+    height:30px;
+}
+.acc>li>a>svg{
+    top: 13px;
+    color: black;
+    height:30px;
+}
+#header>.home-btn,.tv-btn,.mk-btn,.human-btn,.game-btn,.avt-btn,
+.menu-btn,.mess-btn,.notif-btn,.arrow-down{
+    width: 56px;
+    height: 56px;
+    position: relative;
+    left: 10%;
+    margin: 0 30px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 0px;
+    margin-left: 180px;
+    padding-left: 0px;
+
+}
+ul>li{
+    text-align: center;
+    padding: 2.9%;
+    margin: 0 10px;
+}
+.acc li:hover .sub-arrow-down{
+    display: block;
+}
+.sub-arrow-down{
+    display: none;
+    top: 59px;
+    position: absolute;
+    background-color: black;
+    width: 200px;
+    height: 200px;
+    right: 0px;
+}
