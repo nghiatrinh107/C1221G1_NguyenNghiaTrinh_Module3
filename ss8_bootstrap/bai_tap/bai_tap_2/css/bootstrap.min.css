@@ -9070,8 +9070,9 @@ a.text-dark:focus, a.text-dark:hover {
         border: 1px solid #ddd !important
     }
 }
-#search-header{
-display: none;
+
+#search-header {
+    display: none;
 }
  #carouselExampleIndicators{
      padding: 50px;
