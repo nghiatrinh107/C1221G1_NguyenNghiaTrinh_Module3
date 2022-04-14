@@ -5,14 +5,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ProductDiscountCalculatorServlet", urlPatterns = "/display-discount")
+@WebServlet(name = "ProductDiscountCalculatorServlet", urlPatterns = {"/display-discount"})
 public class ProductDiscountCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        double listPrice = Double.parseDouble(request.getParameter("List-Price"));
-        double discountPercent = Double.parseDouble(request.getParameter("Discount-Percent"));
+        double listPrice = Double.parseDouble(request.getParameter("listPrice"));
+        double discountPercent = Double.parseDouble(request.getParameter("discountPercent"));
         double discountAmount = listPrice*discountPercent*0.01;
         double discountPrice = listPrice - discountAmount;
-        String productDescription = request.getParameter("Product-Description");
+        String productDescription = request.getParameter("productDescription");
 
         request.setAttribute("ProductDescription",productDescription);
         request.setAttribute("ListPrice",listPrice);

@@ -14,11 +14,11 @@
   <h2>Product Discount Calculator</h2>
   <form method="post" action="/display-discount">
     <label>Product Description: </label><br/>
-    <input type="text" name="Product-Description" placeholder="Mô tả của sản phẩm"/><br/>
+    <input type="text" name="productDescription" placeholder="Mô tả của sản phẩm"/><br/>
     <label>List Price </label><br/>
-    <input type="number" name="List-Price" placeholder="Giá niêm yết của sản phẩm" /><br/>
+    <input type="number" name="listPrice" placeholder="Giá niêm yết của sản phẩm" /><br/>
     <label>Discount Percent </label><br/>
-    <input type="number" name="Discount-Percent" placeholder="Tỷ lệ chiết khấu (phần trăm)" /><br/>
+    <input type="number" name="discountPercent" placeholder="Tỷ lệ chiết khấu (phần trăm)" /><br/>
     <input type = "submit" id = "submit" value = "Converter"/>
   </form>
   </body>
