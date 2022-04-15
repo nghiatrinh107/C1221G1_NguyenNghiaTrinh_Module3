@@ -40,7 +40,7 @@ public class CalculatorServlet extends HttpServlet {
         try {
             result = Calculator.calculate(firstOperand, secondOperand, operator);
         } catch (RuntimeException runtimeException) {
-            message = "mẫu không được là 0 ";
+            message = runtimeException.getMessage();
         }
         request.setAttribute("message", message);
         request.setAttribute("firstOperand", firstOperand);
