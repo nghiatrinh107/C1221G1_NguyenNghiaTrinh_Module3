@@ -38,6 +38,22 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public List<Product> search(String name) {
+        List<Product> productList=new ArrayList<>();
+        for (Map.Entry<Integer,Product> entry: products.entrySet()) {
+            if(entry.getValue().getNameProduct().contains(name)){
+                productList.add(entry.getValue());
+            }
+        }
+        return productList;
+    }
+
+    @Override
+    public void remove(int id) {
+        products.remove(id);
+    }
+
+    @Override
     public Product findById(int id) {
         return products.get(id);
     }

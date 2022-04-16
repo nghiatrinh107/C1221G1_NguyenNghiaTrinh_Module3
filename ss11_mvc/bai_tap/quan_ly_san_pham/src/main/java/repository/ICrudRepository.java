@@ -12,4 +12,8 @@ public interface ICrudRepository<E> {
     Product findById(int id);
 
     void update(int id, E e);
+
+    List<E> search(String name);
+
+    void remove(int id);
 }

@@ -30,17 +30,17 @@ public class ProductController extends HttpServlet {
                 createProduct(request, response);
                 break;
             case "edit":
-                updateCustomer(request, response);
+                updateProduct(request, response);
                 break;
             case "delete":
-                deleteCustomer(request, response);
+                deleteProduct(request, response);
                 break;
             default:
                 break;
         }
     }
 
-    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         String nameProduct = request.getParameter("name_product");
         double priceProduct = Double.parseDouble(request.getParameter("price_product"));
@@ -55,12 +55,14 @@ public class ProductController extends HttpServlet {
             product.setPriceProduct(priceProduct);
             product.setDescription(description);
             product.setManufacturer(manufacturer);
-            iProductService.update(id,product);
+
+            iProductService.update(id, product);
+
             request.setAttribute("product", product);
             request.setAttribute("message", "Product information was updated");
             dispatcher = request.getRequestDispatcher("product/edit.jsp");
             try {
-                dispatcher.forward(request,response);
+                dispatcher.forward(request, response);
             } catch (ServletException e) {
                 e.printStackTrace();
             } catch (IOException e) {
@@ -69,7 +71,21 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = this.iProductService.findById(id);
+        RequestDispatcher dispatcher;
+        System.out.println("id");
+        if(product == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        } else {
+            this.iProductService.delete(id);
+            try {
+                response.sendRedirect("/products");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -106,9 +122,25 @@ public class ProductController extends HttpServlet {
             case "delete":
                 showDeleteForm(request, response);
                 break;
-            default:
-                listCustomers(request, response);
+            case "search":
+                searchProduct(request, response);
                 break;
+            default:
+                listProduct(request, response);
+                break;
+        }
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Product> productList = iProductService.search(name);
+        request.setAttribute("products", productList);
+        try {
+            request.getRequestDispatcher("product/list.jsp").forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -146,7 +178,7 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    private void listCustomers(HttpServletRequest request, HttpServletResponse response) {
+    private void listProduct(HttpServletRequest request, HttpServletResponse response) {
         List<Product> productList = iProductService.getListProduct();
         request.setAttribute("products", productList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/list.jsp");

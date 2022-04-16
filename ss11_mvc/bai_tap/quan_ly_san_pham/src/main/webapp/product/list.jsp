@@ -32,7 +32,39 @@
             <td>${products.description}</td>
             <td>${products.manufacturer}</td>
             <td><a href="/product?action=edit&id=${products.getId()}">edit</a></td>
-            <td><a href="/product?action=delete&id=${products.getId()}">delete</a></td>
+            <td>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    delete
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalCenterTitle"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Bạn có muốn xoá sản phẩm này
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <form method="post" action="/product">
+                                    <input type="hidden" name="action" value="delete">
+                                    <input type="hidden" name="id" value="${products.getId()}">
+                                    <button type="submit" class="btn btn-primary">Xác nhận xoá</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
         </tr>
     </c:forEach>
 </table>
@@ -40,7 +72,11 @@
     <button type="button" onclick="location.href='/product?action=create';" class="csw-btn-button">Create new product</button>
 </p>
 
-
+<form class="form-inline my-2 my-lg-0" action="/product">
+    <input type="hidden" name="action" value="search">
+    <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
+</form>
 
 
 
