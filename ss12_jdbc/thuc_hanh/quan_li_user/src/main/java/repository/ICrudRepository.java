@@ -16,4 +16,6 @@ public interface ICrudRepository<E> {
     boolean update (E e);;
 
     boolean delete(int id);
+
+    List<User> search(String country);
 }

@@ -111,6 +111,40 @@ public class UserRepository implements IUserRepository {
 
     }
 
+    @Override
+    public List<User> search(String country) {
+        List<User> userList = new ArrayList<>();
+
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("select id, name,email,country from users where country like '%country%'");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            User user;
+            while (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+                userList.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert preparedStatement != null;
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return userList;
+    }
+
 
     @Override
     public User selectUser(int id) {

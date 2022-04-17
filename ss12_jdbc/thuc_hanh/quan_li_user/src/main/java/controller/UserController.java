@@ -44,9 +44,9 @@ public class UserController extends javax.servlet.http.HttpServlet {
         User user = this.iUserService.selectUser(id);
         RequestDispatcher dispatcher;
         this.iUserService.delete(id);
-        if(user == null) {
+        if (user == null) {
             dispatcher = request.getRequestDispatcher("error-404.jsp");
-        }else {
+        } else {
             try {
                 response.sendRedirect("/");
             } catch (IOException e) {
@@ -115,11 +115,24 @@ public class UserController extends javax.servlet.http.HttpServlet {
                 showEditForm(request, response);
                 break;
             case "search":
-//                searchProduct(request, response);
+                searchProduct(request, response);
                 break;
             default:
                 listUser(request, response);
                 break;
+        }
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
+        String country = request.getParameter("country");
+        List<User> userList = iUserService.search(country);
+        request.setAttribute("user",userList);
+        try {
+            request.getRequestDispatcher("user/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

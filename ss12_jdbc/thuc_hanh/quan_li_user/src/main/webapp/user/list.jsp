@@ -75,7 +75,7 @@
 
 <form class="form-inline my-2 my-lg-0" action="/user">
     <input type="hidden" name="action" value="search">
-    <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control mr-sm-2" name="country" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
 </form>
 

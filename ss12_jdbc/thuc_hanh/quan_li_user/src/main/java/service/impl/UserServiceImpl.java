@@ -49,5 +49,10 @@ public class UserServiceImpl implements IUserService {
         iUserRepository.delete(id);
     }
 
+    @Override
+    public List<User> search(String country) {
+        return iUserRepository.search(country);
+    }
+
 
 }
