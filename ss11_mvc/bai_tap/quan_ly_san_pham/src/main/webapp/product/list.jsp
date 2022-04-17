@@ -14,26 +14,27 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 </head>
 <body>
-<table border="1">
+<table class="table table-striped"  >
     <tr>
-        <td>ID</td>
-        <td>Name Product</td>
-        <td>Price Product</td>
-        <td>Description</td>
-        <td>manufacturer</td>
-        <td>Edit</td>
-        <td>Delete</td>
+        <td scope="col">ID</td>
+        <td scope="col">Name Product</td>
+        <td scope="col">Price Product</td>
+        <td scope="col">Description</td>
+        <td scope="col">manufacturer</td>
+        <td scope="col">Edit</td>
+        <td scope="col">Delete</td>
     </tr>
     <c:forEach items='${products}' var="products">
         <tr>
-            <td>${products.getId()}</td>
-            <td>${products.nameProduct}</td>
-            <td>${products.priceProduct}</td>
-            <td>${products.description}</td>
-            <td>${products.manufacturer}</td>
-            <td><a href="/product?action=edit&id=${products.getId()}">edit</a></td>
-            <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <td scope="col">${products.getId()}</td>
+            <td scope="col">${products.nameProduct}</td>
+            <td scope="col">${products.priceProduct}</td>
+            <td scope="col">${products.description}</td>
+            <td scope="col">${products.manufacturer}</td>
+            <td scope="col" class="badge badge-secondary" ><a href="/product?action=edit&id=${products.getId()}">edit</a></td>
+            <td scope="col">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"
+                        onclick="deleteProduct(${products.getId()})" >
                     delete
                 </button>
                 <!-- Modal -->
@@ -53,10 +54,10 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <form method="post" action="/product">
+                                <form method="post" >
                                     <input type="hidden" name="action" value="delete">
-                                    <input type="hidden" name="id" value="${products.getId()}">
-                                    <button type="submit" class="btn btn-primary">Xác nhận xoá</button>
+                                    <input type="hidden" name="id" id="idDelete">
+                                    <button type="submit" class="btn btn-danger">Xác nhận xoá</button>
                                 </form>
                             </div>
                         </div>
@@ -91,5 +92,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"></script>
+<script>
+    function deleteProduct(id) {
+        document.getElementById("idDelete").value = id;
+    }
+</script>
 </body>
 </html>
