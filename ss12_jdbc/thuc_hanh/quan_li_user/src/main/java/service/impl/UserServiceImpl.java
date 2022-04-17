@@ -33,5 +33,21 @@ public class UserServiceImpl implements IUserService {
         return map;
     }
 
+    @Override
+    public User selectUser(int id) {
+        User user =iUserRepository.selectUser(id);
+        return user;
+    }
+
+    @Override
+    public void update(User user) {
+        iUserRepository.update(user);
+    }
+
+    @Override
+    public void delete(int id) {
+        iUserRepository.delete(id);
+    }
+
 
 }

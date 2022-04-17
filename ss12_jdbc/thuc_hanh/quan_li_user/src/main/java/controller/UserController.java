@@ -29,13 +29,59 @@ public class UserController extends javax.servlet.http.HttpServlet {
                 createProduct(request, response);
                 break;
             case "edit":
-//                updateProduct(request, response);
+                updateProduct(request, response);
                 break;
             case "delete":
-//                deleteProduct(request, response);
+                deleteProduct(request, response);
                 break;
             default:
                 break;
+        }
+    }
+
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = this.iUserService.selectUser(id);
+        RequestDispatcher dispatcher;
+        this.iUserService.delete(id);
+        if(user == null) {
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else {
+            try {
+                response.sendRedirect("/");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String country = request.getParameter("country");
+        User user = iUserService.selectUser(id);
+        RequestDispatcher dispatcher;
+        if (user == null) {
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        } else {
+            user.setName(name);
+            user.setEmail(email);
+            user.setCountry(country);
+
+            iUserService.update(user);
+
+            request.setAttribute("user", user);
+            request.setAttribute("message", "User information was updated");
+            dispatcher = request.getRequestDispatcher("user/edit.jsp");
+            try {
+                dispatcher.forward(request, response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -44,7 +90,7 @@ public class UserController extends javax.servlet.http.HttpServlet {
         String email = request.getParameter("email");
         String country = request.getParameter("country");
         User user = new User(name, email, country);
-        Map<String ,String> map =iUserService.save(user);
+        Map<String, String> map = iUserService.save(user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/create.jsp");
         request.setAttribute("message", "New user was created");
         try {
@@ -66,7 +112,7 @@ public class UserController extends javax.servlet.http.HttpServlet {
                 showCreateForm(request, response);
                 break;
             case "edit":
-//                showEditForm(request, response);
+                showEditForm(request, response);
                 break;
             case "search":
 //                searchProduct(request, response);
@@ -74,6 +120,20 @@ public class UserController extends javax.servlet.http.HttpServlet {
             default:
                 listUser(request, response);
                 break;
+        }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        User user = iUserService.selectUser(id);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        request.setAttribute("user", user);
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

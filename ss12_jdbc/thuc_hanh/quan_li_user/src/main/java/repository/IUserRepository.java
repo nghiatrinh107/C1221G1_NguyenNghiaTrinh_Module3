@@ -10,4 +10,7 @@ public interface IUserRepository extends ICrudRepository<User> {
 
     @Override
     void save(User user);
+
+    @Override
+    boolean update(User user);
 }

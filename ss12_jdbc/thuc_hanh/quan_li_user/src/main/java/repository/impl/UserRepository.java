@@ -4,6 +4,7 @@ import model.User;
 import repository.BaseRepository;
 import repository.IUserRepository;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -62,4 +63,85 @@ public class UserRepository implements IUserRepository {
             }
         }
     }
+
+    @Override
+    public boolean update(User user) {
+        boolean rowUpdated = false;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("UPDATE users SET `name` = ?,email= ?, country =? WHERE id = ?;");
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getEmail());
+            preparedStatement.setString(3, user.getCountry());
+            preparedStatement.setInt(4, user.getId());
+            rowUpdated = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert preparedStatement != null;
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return rowUpdated;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        boolean rowDeleted = false;
+
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("DELETE FROM users WHERE id = ?;");
+            preparedStatement.setInt(1, id);
+            rowDeleted = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert preparedStatement != null;
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return rowDeleted;
+
+    }
+
+
+    @Override
+    public User selectUser(int id) {
+        User user = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("SELECT id,`name`,email,country FROM users WHERE id =?;");
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            String name;
+            String email;
+            String country;
+            while (resultSet.next()) {
+                name = resultSet.getString("name");
+                email = resultSet.getString("email");
+                country = resultSet.getString("country");
+                user = new User(id, name, email, country);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                assert preparedStatement != null;
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return user;
+    }
+
+
 }
