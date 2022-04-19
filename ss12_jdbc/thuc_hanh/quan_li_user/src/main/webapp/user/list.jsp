@@ -15,73 +15,74 @@
 </head>
 <body>
 <h1>User</h1>
-
-<table class="table table-striped"  >
-    <tr>
-        <td scope="col">ID</td>
-        <td scope="col">Name</td>
-        <td scope="col">Email</td>
-        <td scope="col">Country</td>
-        <td scope="col">Edit</td>
-        <td scope="col">Delete</td>
-    </tr>
-    <c:forEach items='${users}' var="user">
+<div class="container">
+    <table class="table table-striped">
         <tr>
-            <td scope="col">${user.id}</td>
-            <td scope="col">${user.name}</td>
-            <td scope="col">${user.email}</td>
-            <td scope="col">${user.country}</td>
-            <td scope="col" class="badge badge-secondary" ><a href="/user?action=edit&id=${user.getId()}">edit</a></td>
-            <td scope="col">
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"
-                        onclick="deleteUser(${user.getId()})" >
-                    delete
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalCenterTitle"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                Bạn có muốn xoá sản phẩm này
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <form method="post" >
-                                    <input type="hidden" name="action" value="delete">
-                                    <input type="hidden" name="id" id="idDelete">
-                                    <button type="submit" class="btn btn-danger">Xác nhận xoá</button>
-                                </form>
+            <td scope="col">ID</td>
+            <td scope="col">Name</td>
+            <td scope="col">Email</td>
+            <td scope="col">Country</td>
+            <td scope="col">Edit</td>
+            <td scope="col">Delete</td>
+        </tr>
+        <c:forEach items='${users}' var="user">
+            <tr>
+                <td scope="col">${user.id}</td>
+                <td scope="col">${user.name}</td>
+                <td scope="col">${user.email}</td>
+                <td scope="col">${user.country}</td>
+                <td scope="col">
+                    <button type="button" class="btn btn-secondary"><a
+                            href="/user?action=edit&id=${user.getId()}">edit</a></button>
+                </td>
+                <td scope="col">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter"
+                            onclick="deleteUser(${user.getId()})">
+                        delete
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalCenterTitle"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn có muốn xoá sản phẩm này
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <form method="post">
+                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="id" id="idDelete">
+                                        <button type="submit" class="btn btn-danger">Xác nhận xoá</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </td>
-        </tr>
+                </td>
+            </tr>
 
-        </tr>
-    </c:forEach>
-</table>
-<p>
-    <button type="button" onclick="location.href='/user?action=create';" class="csw-btn-button">Create new product</button>
-</p>
+            </tr>
+        </c:forEach>
+    </table>
+    <p>
+        <button type="button" onclick="location.href='/user?action=create';" class="csw-btn-button">Create new product
+        </button>
+    </p>
 
-<form class="form-inline my-2 my-lg-0" action="/user">
-    <input type="hidden" name="action" value="search">
-    <input class="form-control mr-sm-2" name="country" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
-</form>
-
-
-
-
+    <form class="form-inline my-2 my-lg-0" action="/user">
+        <input type="hidden" name="action" value="search">
+        <input class="form-control mr-sm-2" name="country" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

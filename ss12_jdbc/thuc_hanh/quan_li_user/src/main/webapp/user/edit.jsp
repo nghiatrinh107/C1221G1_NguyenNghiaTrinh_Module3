@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Edit Product</h1>
+<h1>Edit User</h1>
 <p>
     <c:if test='${requestScope["message"] != null}'>
         <span class="message">${requestScope["message"]}</span>

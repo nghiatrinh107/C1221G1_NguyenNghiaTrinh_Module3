@@ -61,28 +61,45 @@ public class UserController extends javax.servlet.http.HttpServlet {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
-        User user = iUserService.selectUser(id);
         RequestDispatcher dispatcher;
-        if (user == null) {
-            dispatcher = request.getRequestDispatcher("error-404.jsp");
-        } else {
-            user.setName(name);
-            user.setEmail(email);
-            user.setCountry(country);
-
-            iUserService.update(user);
-
-            request.setAttribute("user", user);
+        User user = new User(id,name,email,country);
+        boolean check =iUserService.update(user);
+        if (check){
             request.setAttribute("message", "User information was updated");
-            dispatcher = request.getRequestDispatcher("user/edit.jsp");
-            try {
-                dispatcher.forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
+        }else {
+            request.setAttribute("message", "not");
         }
+        dispatcher = request.getRequestDispatcher("user/edit.jsp");
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        User user = iUserService.selectUser(id);
+//        RequestDispatcher dispatcher;
+//        if (user == null) {
+//            dispatcher = request.getRequestDispatcher("error-404.jsp");
+//        } else {
+//            user.setName(name);
+//            user.setEmail(email);
+//            user.setCountry(country);
+//
+//            iUserService.update(user);
+//
+//            request.setAttribute("user", user);
+//            request.setAttribute("message", "User information was updated");
+//            dispatcher = request.getRequestDispatcher("user/edit.jsp");
+//            try {
+//                dispatcher.forward(request, response);
+//            } catch (ServletException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -126,7 +143,7 @@ public class UserController extends javax.servlet.http.HttpServlet {
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
         String country = request.getParameter("country");
         List<User> userList = iUserService.search(country);
-        request.setAttribute("user",userList);
+        request.setAttribute("users",userList);
         try {
             request.getRequestDispatcher("user/list.jsp").forward(request,response);
         } catch (ServletException e) {

@@ -40,8 +40,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void update(User user) {
-        iUserRepository.update(user);
+    public boolean update(User user) {
+        return iUserRepository.update(user);
     }
 
     @Override

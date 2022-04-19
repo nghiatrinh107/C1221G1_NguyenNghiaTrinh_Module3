@@ -48,7 +48,7 @@
                 <a class="nav-link" href="#">Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Customer</a>
+                <a class="nav-link" href="http://localhost:8080/customer">Customer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Service</a>
@@ -66,24 +66,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-3" >
-            <div>
-                <a href="#">item</a>
-            </div>
-            <div>
-                <a href="#">item</a>
-            </div>
-            <div>
-                <a href="#">item</a>
+        <div class="col-2" >
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action">item 1</a>
+                <a href="#" class="list-group-item list-group-item-action">item 2</a>
+                <a href="#" class="list-group-item list-group-item-action">item 3</a>
+                <a href="#" class="list-group-item list-group-item-action ">item 4</a>
             </div>
         </div>
-        <div class="col-9">
-
+        <div class="col-10">
+        <img width="100%" src="https://ik.imagekit.io/tvlk/apr-asset/dgXfoyh24ryQLRcGq00cIdKHRmotrWLNlvG-TxlcLxGkiDwaUSggleJNPRgIHCX6/hotel/asset/10024652-bc18297d4573af8399677d30a0363d4e.jpeg?tr=q-40,c-at_max,w-1280,h-720&_src=imagekit">
         </div>
     </div>
 </div>
 </div>
 </div>
+
 
 <footer class="bg-light text-center text-white">
     <div class="container p-4 pb-0">
@@ -146,6 +144,9 @@
     </div>
 
 </footer>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
