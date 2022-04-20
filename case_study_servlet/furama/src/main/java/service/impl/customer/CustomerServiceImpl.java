@@ -1,4 +1,4 @@
-package service.impl;
+package service.impl.customer;
 
 import model.customer.Customer;
 import model.customer.CustomerType;
@@ -32,6 +32,33 @@ private ICustomerRepository iCustomerRepository = new CustomerRepository();
         }
         return map;
     }
+
+    @Override
+    public Map<String, String> update(Customer customer) {
+        Map<String, String> map = new HashMap<>();
+        if (customer.getCustomerName().equals("")) {
+            map.put("name", "Not Null");
+        } else if (!customer.getCustomerName().matches("^[a-zA-Z ]+$")) {
+            map.put("name", "Invalid name");
+        }
+
+        if (map.isEmpty()) {
+            iCustomerRepository.update(customer);
+        }
+        return map;
+    }
+
+    @Override
+    public List<Customer> search(String name, String address, String typeId) {
+        return iCustomerRepository.search(name,address,typeId);
+    }
+
+
+    @Override
+    public boolean delete(Integer id) {
+        return iCustomerRepository.delete(id);
+    }
+
 
     @Override
     public List<CustomerType> getTypeList() {

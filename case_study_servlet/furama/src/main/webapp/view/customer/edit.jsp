@@ -86,8 +86,8 @@
                 <tr>
                     <td>Customer Type Id </td>
                     <td>
-                        <select name="type" >
-                            <c:forEach items="${type}" var="x">
+                        <select name="type" value="${customer.customerTypeId}" >
+                            <c:forEach items="${type}" var="x" >
                                 <option value="${x.customerTypeId}">${x.customerTypeName}</option>
                             </c:forEach>
                         </select>
@@ -116,7 +116,7 @@
                 </tr>
                 <tr>
                     <td>Customer Email </td>
-                    <td><input type="text" name="email" value="${customer.customerPhone}" ></td>
+                    <td><input type="text" name="email" value="${customer.customerEmail}" ></td>
                 </tr>
                 <tr>
                     <td>Customer Address </td>
@@ -124,7 +124,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" value="Create user"></td>
+                    <td><input type="submit" value="Update Customer"></td>
                 </tr>
             </table>
         </fieldset>

@@ -11,4 +11,9 @@ public interface IFuramaService<E> {
     Map<String, String> save(E e);
 
     E findById(int id);
+
+    Map<String, String> update(E e);
+
+
+    boolean delete(Integer id);
 }

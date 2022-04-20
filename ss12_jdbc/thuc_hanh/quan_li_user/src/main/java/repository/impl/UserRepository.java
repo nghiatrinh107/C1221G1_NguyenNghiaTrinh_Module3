@@ -127,17 +127,16 @@ public class UserRepository implements IUserRepository {
 
         PreparedStatement preparedStatement = null;
         try {
-//            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("DELETE FROM users WHERE id = ?;");
-//            preparedStatement.setInt(1, id);
-//            rowDeleted = preparedStatement.executeUpdate() > 0;
-            CallableStatement callableStatement = baseRepository.getConnectionJavaToDB()    .prepareCall("call delete_user(?)");
-            callableStatement.setInt(1, id);
-            rowDeleted = callableStatement.executeUpdate() > 0;
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("DELETE FROM users WHERE id = ?;");
+            preparedStatement.setInt(1, id);
+            rowDeleted = preparedStatement.executeUpdate() > 0;
+//            CallableStatement callableStatement = baseRepository.getConnectionJavaToDB()    .prepareCall("call delete_user(?)");
+//            callableStatement.setInt(1, id);
+//            rowDeleted = callableStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             try {
-                assert preparedStatement != null;
                 preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();

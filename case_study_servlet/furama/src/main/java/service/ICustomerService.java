@@ -17,4 +17,10 @@ public interface ICustomerService extends IFuramaService<Customer> {
 
     @Override
     Map<String, String> save(Customer customer);
+
+    @Override
+    Map<String, String> update(Customer customer);
+
+
+    List<Customer> search(String name, String address, String typeId);
 }

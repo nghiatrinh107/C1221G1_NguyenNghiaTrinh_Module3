@@ -81,7 +81,8 @@
             <table>
                 <tr>
                     <td>Name Customer </td>
-                    <td><input type="text" name="name" ></td>
+                    <td><input type="text" name="name" ><span style="color: red">*</span></td>
+
                 </tr>
                 <tr>
                     <td>Customer Type Id </td>
@@ -90,29 +91,34 @@
                             <c:forEach items="${type}" var="x">
                                 <option value="${x.customerTypeId}">${x.customerTypeName}</option>
                             </c:forEach>
-                        </select>
+                        </select><span style="color: red">*</span>
                     </td>
+
                 </tr>
                 <tr>
                     <td>Brithday </td>
-                    <td><input type="date" name="birthday" ></td>
+                    <td><input type="date" name="birthday" ><span style="color: red">*</span></td>
+
                 </tr>
                 <tr>
                     <td>Gender </td>
                     <td>
                         <select name="gender">
                             <option value="1">Male</option>
-                            <option value="1">Female</option>
-                        </select>
+                            <option value="0">Female</option>
+                        </select><span style="color: red">*</span>
                     </td>
+
                 </tr>
                 <tr>
                     <td>Customer Id Card </td>
-                    <td><input type="text" name="idCard" ></td>
+                    <td><input type="text" name="idCard" ><span style="color: red">*</span></td>
+
                 </tr>
                 <tr>
                     <td>Customer Phone </td>
-                    <td><input type="text" name="phone" ></td>
+                    <td><input type="text" name="phone" ><span style="color: red">*</span></td>
+
                 </tr>
                 <tr>
                     <td>Customer Email </td>
@@ -129,6 +135,7 @@
             </table>
         </fieldset>
     </form>
+    <span style="color: red">(* Bắt buộc phải điền)</span>
 </div>
 
 
