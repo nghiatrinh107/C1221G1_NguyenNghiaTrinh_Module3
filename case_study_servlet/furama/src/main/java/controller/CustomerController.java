@@ -97,7 +97,7 @@ public class CustomerController extends HttpServlet {
         Customer customer = new Customer(type, name, birthday, gender, idCard, phone, email, address);
         Map<String, String> map = iCustomerService.save(customer);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
-        request.setAttribute("message", "New user was created");
+        request.setAttribute("message", "New customer was created");
         try {
             dispatcher.forward(request, response);
         } catch (ServletException e) {

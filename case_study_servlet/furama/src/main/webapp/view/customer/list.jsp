@@ -89,7 +89,7 @@
         <table class="table table-striped" id="tableCustomer">
             <thead>
             <tr>
-                <td scope="col">ID</td>
+                <td scope="col">STT</td>
                 <td scope="col">Name</td>
                 <td scope="col">Birthday</td>
                 <td scope="col">Gender</td>
@@ -103,9 +103,9 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items='${customer}' var="x">
+            <c:forEach items='${customer}' var="x" varStatus="stt">
                 <tr>
-                    <td scope="col">${x.customerId}</td>
+                    <td scope="col">${stt.count}</td>
                     <td scope="col">${x.customerName}</td>
                     <td scope="col">${x.customerBirthday}</td>
                     <td scope="col">
