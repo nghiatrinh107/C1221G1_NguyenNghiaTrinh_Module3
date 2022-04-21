@@ -4,19 +4,19 @@ public class FuramaService {
     private Integer serviceId;
     private String serviceName;
     private Integer serviceArea;
-    private Double serviceCost;
+    private Integer serviceCost;
     private Integer serviceMaxPeople;
     private Integer rentType;
     private Integer serviceType;
     private String standardRoom;
     private String description;
-    private Double poolArea;
+    private Integer poolArea;
     private Integer numberOfFloors;
 
     public FuramaService() {
     }
 
-    public FuramaService(Integer serviceId, String serviceName, Integer serviceArea, Double serviceCost, Integer serviceMaxPeople, Integer rentType, Integer serviceType, String standardRoom, String description, Double poolArea, Integer numberOfFloors) {
+    public FuramaService(Integer serviceId, String serviceName, Integer serviceArea, Integer serviceCost, Integer serviceMaxPeople, Integer rentType, Integer serviceType, String standardRoom, String description, Integer poolArea, Integer numberOfFloors) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
@@ -30,7 +30,7 @@ public class FuramaService {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public FuramaService(String serviceName, Integer serviceArea, Double serviceCost, Integer serviceMaxPeople, Integer rentType, Integer serviceType, String standardRoom, String description, Double poolArea, Integer numberOfFloors) {
+    public FuramaService(String serviceName, Integer serviceArea, Integer serviceCost, Integer serviceMaxPeople, Integer rentType, Integer serviceType, String standardRoom, String description, Integer poolArea, Integer numberOfFloors) {
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
         this.serviceCost = serviceCost;
@@ -67,11 +67,11 @@ public class FuramaService {
         this.serviceArea = serviceArea;
     }
 
-    public Double getServiceCost() {
+    public Integer getServiceCost() {
         return serviceCost;
     }
 
-    public void setServiceCost(Double serviceCost) {
+    public void setServiceCost(Integer serviceCost) {
         this.serviceCost = serviceCost;
     }
 
@@ -115,11 +115,11 @@ public class FuramaService {
         this.description = description;
     }
 
-    public Double getPoolArea() {
+    public Integer getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(Double poolArea) {
+    public void setPoolArea(Integer poolArea) {
         this.poolArea = poolArea;
     }
 

@@ -66,7 +66,7 @@
 
 
 <div class="container">
-    <h1>Create new User</h1>
+    <h1>Create new Customer</h1>
     <p>
         <c:if test='${requestScope["message"] != null}'>
             <span class="message">${requestScope["message"]}</span>

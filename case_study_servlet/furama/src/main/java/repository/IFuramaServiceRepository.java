@@ -2,5 +2,11 @@ package repository;
 
 import model.furama_service.FuramaService;
 
-public interface IFuramaServiceRepository extends ICrudRepository<FuramaService> {
+import java.util.List;
+
+public interface IFuramaServiceRepository {
+
+    List<FuramaService> getList();
+
+    void save(FuramaService furamaService);
 }

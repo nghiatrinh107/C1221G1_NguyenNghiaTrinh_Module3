@@ -82,7 +82,7 @@
     </form>
     <p>
         <button type="button" onclick="location.href='/customer?action=create';" class="csw-btn-button">Create new
-            product
+            Customer
         </button>
     </p>
     <div class="container">

@@ -71,10 +71,8 @@ public class CustomerRepository implements ICustomerRepository {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
-            return customerTypeList;
         }
-
+        return customerTypeList;
     }
 
 

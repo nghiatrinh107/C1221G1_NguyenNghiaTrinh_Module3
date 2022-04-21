@@ -51,7 +51,6 @@ public class CustomerController extends HttpServlet {
         }else {
             iCustomerService.delete(id);
             request.setAttribute("customer",customer);
-            request.setAttribute("mess","Done");
             dispatcher=request.getRequestDispatcher("/customer");
             try{
                 response.sendRedirect("/customer");
@@ -139,9 +138,7 @@ public class CustomerController extends HttpServlet {
         request.setAttribute("type", customerTypeList);
         try {
             request.getRequestDispatcher("view/customer/list.jsp").forward(request, response);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ServletException | IOException e) {
             e.printStackTrace();
         }
     }
